@@ -1,69 +1,91 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { ArrowRight, Compass, PlusCircle, ShieldCheck, Users } from 'lucide-react';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+      <section className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
+        <div className="max-w-3xl">
+          <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+            STACK 2026 — Smarter Campus &amp; Learning
+          </span>
+          <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Temukan Tim Kompetisi Kampus yang Tepat, Tanpa Broadcast Chat yang Tenggelam.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="mt-4 text-base leading-relaxed text-slate-600">
+            SynerTeam membantu mahasiswa dalam satu kampus membentuk tim kompetisi
+            (Hackathon, Data Science, Business Case, KTI) melalui sistem{' '}
+            <strong className="font-semibold text-slate-800">Role-Based Open Lobby</strong>.
+            Buat profil keahlianmu, jelajahi lobi tim yang sedang mencari role tertentu,
+            atau buka lobi timmu sendiri.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <Compass className="h-4 w-4" aria-hidden="true" />
+              Jelajahi Lobi Tim
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/teams/new"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50"
             >
-              Learning
-            </a>{" "}
-            center.
+              <PlusCircle className="h-4 w-4" aria-hidden="true" />
+              Buat Tim Baru
+            </Link>
+            <Link
+              href="/register"
+              className="inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-indigo-700 hover:bg-indigo-50"
+            >
+              Daftar Akun Mahasiswa
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-10 grid gap-6 sm:grid-cols-3">
+        <div className="rounded-xl border border-slate-200 bg-white p-6">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+            <Users className="h-5 w-5" aria-hidden="true" />
+          </div>
+          <h2 className="mt-4 text-base font-semibold text-slate-900">
+            1. Profil Kompetensi &amp; Komitmen
+          </h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Lengkapi role utama, tingkat keahlian, jam luang mingguan, target ambisi lomba,
+            serta tautan GitHub/LinkedIn tanpa data pribadi yang berlebihan.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="rounded-xl border border-slate-200 bg-white p-6">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+            <Compass className="h-5 w-5" aria-hidden="true" />
+          </div>
+          <h2 className="mt-4 text-base font-semibold text-slate-900">
+            2. Dashboard Pencarian Tim
+          </h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Cari dan filter lobi tim berdasarkan kategori lomba, role yang dibutuhkan, dan
+            tingkat ambisi, lalu ajukan lamaran langsung ke role yang kosong.
+          </p>
         </div>
-      </main>
+
+        <div className="rounded-xl border border-slate-200 bg-white p-6">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+            <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+          </div>
+          <h2 className="mt-4 text-base font-semibold text-slate-900">
+            3. Buka Lobi &amp; Kelola Pelamar
+          </h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Buat lobi tim dengan kebutuhan role yang jelas, tinjau mahasiswa yang melamar
+            ke timmu, dan terima atau tolak lamaran dalam satu halaman.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
